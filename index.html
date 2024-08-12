@@ -8,6 +8,46 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     /* Custom styles */
+    .hero {
+      background-image: url('/banner-restaurant.jpg'); /* Ensure this path is correct */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* This gives a parallax effect */
+      background-repeat: no-repeat;
+      min-height: 100vh; /* Full-screen height */
+      display: flex;
+      align-items: center; /* Center content vertically */
+      justify-content: center; /* Center content horizontally */
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+      z-index: 1;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Text shadow for readability */
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4); /* Dark overlay to enhance text readability */
+      z-index: -1;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
     .icon-box {
       background-color: #fff;
       border-radius: 8px;
@@ -32,150 +72,143 @@
     .nav-link:hover {
       text-decoration: underline;
     }
-
-    .hero {
-      background-image: url('your-image-url.jpg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-    }
   </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="#">Mosaka Production</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#menu">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Mosaka Production</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#menu">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container text-center">
+      <h1>Welcome to Your Restaurant</h1>
+      <p>Experience the best food in town</p>
+      <a href="#menu" class="btn btn-primary btn-lg">Explore Menu</a>
+    </div>
+  </section>
+
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="icon-box">
+            <i class="fas fa-utensils fa-3x mb-3"></i>
+            <h4>Fresh Ingredients</h4>
+            <p>We use only the freshest ingredients for our dishes.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="icon-box">
+            <i class="fas fa-concierge-bell fa-3x mb-3"></i>
+            <h4>Excellent Service</h4>
+            <p>Our staff is dedicated to providing top-notch service.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="icon-box">
+            <i class="fas fa-wine-glass-alt fa-3x mb-3"></i>
+            <h4>Fine Dining</h4>
+            <p>Enjoy a fine dining experience with a cozy atmosphere.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="menu" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>Our Menu</h2>
+        <p>Explore our delicious offerings</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="menu-item p-4 bg-white shadow-sm">
+            <h5>Juice and Drinks</h5>
+            <p>Description of dish.</p>
+            <ul>
+                <li>Juice za matunda</li>
+                <li>Maziwa</li>
+                <li>Soda</li>
             </ul>
+            <p class="text-primary">1,000.00 - 3,000.00 Tzsh.</p>
           </div>
         </div>
-      </nav>
-      <section class="hero">
-        <div class="container">
-          <h1>Welcome to Mosaka Production</h1>
-          <p>Experience the best food in town</p>
-          <a href="#menu" class="btn btn-primary">Explore Menu</a>
-        </div>
-      </section>
-      <section id="about" class="py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="icon-box">
-                <i class="fas fa-utensils fa-3x mb-3"></i>
-                <h4>Fresh Ingredients</h4>
-                <p>We use only the freshest ingredients for our dishes.</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="icon-box">
-                <i class="fas fa-concierge-bell fa-3x mb-3"></i>
-                <h4>Excellent Service</h4>
-                <p>Our staff is dedicated to providing top-notch service.</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="icon-box">
-                <i class="fas fa-wine-glass-alt fa-3x mb-3"></i>
-                <h4>Fine Dining</h4>
-                <p>Enjoy a fine dining experience with a cozy atmosphere.</p>
-              </div>
-            </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="menu-item p-4 bg-white shadow-sm">
+            <h5>Regular meals</h5>
+            <p>Description of dish.</p>
+            <ul>
+                <li>Ugali</li>
+                <li>Wali</li>
+                <li>Tambi</li>
+            </ul>
+            <p class="text-primary">2,500.00 - 5,000.00 Tshs.</p>
           </div>
         </div>
-      </section>
-      <section id="menu" class="py-5 bg-light">
-        <div class="container">
-          <div class="text-center mb-5">
-            <h2>Our Menu</h2>
-            <p>Explore our delicious offerings</p>
-          </div>
-          <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="menu-item p-4 bg-white shadow-sm">
-                <h5>Juice and Drinks</h5>
-                <p>Description of dish.</p>
-                <ul>
-                    <li>Juice za matunda</li>
-                    <li>Maziwa</li>
-                    <li>Soda</li>
-                </ul>
-                <p class="text-primary">1,000.00 - 3,000.00 Tzsh.</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="menu-item p-4 bg-white shadow-sm">
-                <h5>Regular meals</h5>
-                <p>Description of dish.</p>
-                <ul>
-                    <li>Ugali</li>
-                    <li>Wali</li>
-                    <li>Tambi</li>
-                </ul>
-                <p class="text-primary">2,500.00 - 5,000.00 Tshs.</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="menu-item p-4 bg-white shadow-sm">
-                <h5>Special Order</h5>
-                <p>Description of dish.</p>
-                <ul>
-                    <li>Birian</li>
-                    <li>Pilau</li>
-                    <li>Urojo</li>
-                </ul>
-                <p class="text-primary">5,000.00 - 10,000.00 Tshs.</p>
-              </div>
-            </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="menu-item p-4 bg-white shadow-sm">
+            <h5>Special Order</h5>
+            <p>Description of dish.</p>
+            <ul>
+                <li>Birian</li>
+                <li>Pilau</li>
+                <li>Urojo</li>
+            </ul>
+            <p class="text-primary">5,000.00 - 10,000.00 Tshs.</p>
           </div>
         </div>
-      </section>
-      <section id="contact" class="py-5">
-        <div class="container">
-          <div class="text-center mb-5">
-            <h2>Contact Us</h2>
-            <p>We'd love to hear from you!</p>
-          </div>
-          <div class="row">
-            <div class="col-md-8 mx-auto">
-              <form>
-                <div class="mb-3">
-                  <label for="name" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="name" required>
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                  <label for="message" class="form-label">Message</label>
-                  <textarea class="form-control" id="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-              </form>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you!</p>
+      </div>
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" required>
             </div>
-          </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
         </div>
-      </section>
-      <footer class="bg-dark text-white text-center py-4">
-        <p>&copy; 2024 Mosaka Prodution. All Rights Reserved.</p>
-      </footer>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-    </html>
-                
+      </div>
+    </div>
+  </section>
+  <footer class="bg-dark text-white text-center py-4">
+    <p>&copy; 2024 Mosaka Prodution. All Rights Reserved.</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+            
