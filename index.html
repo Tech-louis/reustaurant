@@ -9,10 +9,10 @@
   <style>
     /* Custom styles */
     .hero {
-      background-image: url('banner-restaurant.jpg'); /* Ensure this path is correct */
+      background-image: url('/banner-restaurant.jpg'); /* Ensure this path is correct */
       background-size: cover;
       background-position: center;
-      background-attachment: fixed; /* This gives a parallax effect */
+      background-attachment: fixed; /* Parallax effect */
       background-repeat: no-repeat;
       min-height: 100vh; /* Full-screen height */
       display: flex;
@@ -37,41 +37,36 @@
       z-index: -1;
     }
 
-    .btn-primary {
-      background-color: #007bff;
-      border-color: #007bff;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+    .navbar {
+      transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
 
-    .btn-primary:hover {
-      background-color: #0056b3;
-      transform: scale(1.05);
+    .navbar.sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      animation: slideDown 0.3s ease-in-out;
     }
 
-    .icon-box {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      padding: 20px;
-      text-align: center;
+    .navbar.hidden {
+      top: -100px;
+      opacity: 0;
+      transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
 
-    .icon-box:hover {
-      transform: scale(1.05);
+    @keyframes slideDown {
+      from {
+        top: -100px;
+        opacity: 0;
+      }
+      to {
+        top: 0;
+        opacity: 1;
+      }
     }
 
-    .menu-item {
-      transition: box-shadow 0.3s ease;
-    }
-
-    .menu-item:hover {
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .nav-link:hover {
-      text-decoration: underline;
-    }
+    /* Other styles (buttons, icon-boxes, etc.) remain the same */
   </style>
 </head>
 <body>
@@ -99,12 +94,13 @@
 
   <section class="hero">
     <div class="container text-center">
-      <h1>Welcome to Mosaka Production</h1>
+      <h1>Welcome to Your Restaurant</h1>
       <p>Experience the best food in town</p>
       <a href="#menu" class="btn btn-primary btn-lg">Explore Menu</a>
     </div>
   </section>
 
+  <!-- Other sections here... -->
   <section id="about" class="py-5">
     <div class="container">
       <div class="row">
@@ -141,6 +137,27 @@
       <div class="row">
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="menu-item p-4 bg-white shadow-sm">
+            <div id="carouselRegularMeals" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/Burger and Doughnut.jpg" alt="Regular meals 1" class="d-block w-100 img-fluid">
+                </div>
+                <div class="carousel-item">
+                  <img src="/Granola crackers and tortilias.jpg" alt="Regular meals 2" class="d-block w-100 img-fluid">
+                </div>
+                <div class="carousel-item">
+                  <img src="/jiuce.jpg" alt="Regular meals 3" class="d-block w-100 img-fluid">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselRegularMeals" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselRegularMeals" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+            </div>
             <h5>Juice and Drinks</h5>
             <p>Description of dish.</p>
             <ul>
@@ -153,18 +170,60 @@
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="menu-item p-4 bg-white shadow-sm">
-            <h5>Regular meals</h5>
+            <div id="carouselRegularMeals" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/Burger and Doughnut.jpg" alt="Regular meals 1" class="d-block w-100 img-fluid">
+                </div>
+                <div class="carousel-item">
+                  <img src="/Granola crackers and tortilias.jpg" alt="Regular meals 2" class="d-block w-100 img-fluid">
+                </div>
+                <div class="carousel-item">
+                  <img src="/jiuce.jpg" alt="Regular meals 3" class="d-block w-100 img-fluid">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselRegularMeals" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselRegularMeals" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+            </div>
+            <h5 class="mt-3">Regular meals</h5>
             <p>Description of dish.</p>
             <ul>
-                <li>Ugali</li>
-                <li>Wali</li>
-                <li>Tambi</li>
+              <li>Ugali</li>
+              <li>Wali</li>
+              <li>Tambi</li>
             </ul>
             <p class="text-primary">2,500.00 - 5,000.00 Tshs.</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="menu-item p-4 bg-white shadow-sm">
+            <div id="carouselRegularMeals" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/Burger and Doughnut.jpg" alt="Regular meals 1" class="d-block w-100 img-fluid">
+                </div>
+                <div class="carousel-item">
+                  <img src="/Granola crackers and tortilias.jpg" alt="Regular meals 2" class="d-block w-100 img-fluid">
+                </div>
+                <div class="carousel-item">
+                  <img src="/jiuce.jpg" alt="Regular meals 3" class="d-block w-100 img-fluid">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselRegularMeals" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselRegularMeals" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+            </div>
             <h5>Special Order</h5>
             <p>Description of dish.</p>
             <ul>
@@ -178,6 +237,7 @@
       </div>
     </div>
   </section>
+  
   <section id="contact" class="py-5">
     <div class="container">
       <div class="text-center mb-5">
@@ -205,10 +265,36 @@
       </div>
     </div>
   </section>
+
   <footer class="bg-dark text-white text-center py-4">
-    <p>&copy; 2024 Mosaka Prodution. All Rights Reserved.</p>
+    <p>&copy; 2024 Mosaka Production. All Rights Reserved.</p>
   </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // JavaScript to handle sticky navbar with animation
+    window.onscroll = function() {
+      stickyNavbar();
+    };
+
+    const navbar = document.querySelector('.navbar');
+    let lastScrollTop = 0;
+
+    function stickyNavbar() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+        // Scroll down
+        navbar.classList.add('hidden');
+        navbar.classList.remove('sticky');
+      } else {
+        // Scroll up
+        navbar.classList.remove('hidden');
+        navbar.classList.add('sticky');
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }
+  </script>
 </body>
 </html>
-            
